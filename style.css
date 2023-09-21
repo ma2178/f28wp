@@ -1,8 +1,14 @@
 p {
   color : red;
   background-color : black;
+  text-align : center;
+  font-size : 20px;
 }
 
 h1 {
 	font-family : Arial;
+}
+
+#kb {
+	color : white;
 }
