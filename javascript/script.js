@@ -5,3 +5,7 @@ function peakFictionOn() {
 function peakFictionOff() {
 	document.getElementById("kb").innerHTML = "Kagurabachi";
 }
+
+function kagurabachi() {
+	window.open("https://www.viz.com/shonenjump/chapters/kagurabachi");
+}
