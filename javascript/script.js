@@ -9,3 +9,11 @@ function peakFictionOff() {
 function kagurabachi() {
 	window.open("https://www.viz.com/shonenjump/chapters/kagurabachi");
 }
+
+function kbtime() {
+	document.getElementById("him").style.visibility = "visible";
+}
+
+function bye() {
+	document.getElementById("him").style.visibility = "hidden";
+}
