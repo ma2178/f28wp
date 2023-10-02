@@ -13,7 +13,3 @@ function kagurabachi() {
 function kbtime() {
 	document.getElementById("him").style.visibility = "visible";
 }
-
-function bye() {
-	document.getElementById("him").style.visibility = "hidden";
-}
