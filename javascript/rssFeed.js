@@ -1,9 +1,7 @@
 async function loadFeed() {
-	let prom = await fetch( 'https://moxie.foxnews.com/google-publisher/latest.xml' );
+	let prom = await fetch( 'https://rss.app/feeds/evJOBWdyAPm8QHPI.xml' );
 	let text = await prom.text();
-
-	console.log( text.substring(0, 100 ) );
-
+	
 	let parser = new DOMParser();
 	let xmlDoc = parser.parseFromString(text, "text/xml");
 
@@ -15,7 +13,7 @@ async function loadFeed() {
 	items.forEach( (el)=>{
 		let title       = el.querySelector('title').textContent;
 		let description = el.querySelector('description').textContent;
-		let guid        = el.querySelector('guid').textContent;
+		let guid        = el.querySelector('link').textContent;
 
 		console.log('title:',       title       );
 		console.log('description:', description);
@@ -26,8 +24,8 @@ async function loadFeed() {
 		div.innerHTML = `
 			<h2>${title}</h2>
 			<p>${description}</p>
+			<a href='${guid}'>LINK</a>
 		`;
-		if ( guid ) div.innerHTML += `<a href='${guid}'>LINK</a>`;
 
 	});
 }
