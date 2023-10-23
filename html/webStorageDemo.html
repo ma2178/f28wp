@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Kagurabachi Storage</title>
+	<script>
+		function savewb() {
+			if (typeof(localStorage) !== "undefined") {
+				var key = document.getElementById("sKey").value;
+				if (key != "")
+					localStorage[key] = document.getElementById("sValue").value;
+			} else
+				alert("No web storage available");
+		}
+		
+		function accesswb() {
+			var s = "";
+			for (var i=0; i<localStorage.length; i++) {
+				var key = localStorage.key(i);
+				s += key + " = " + localStorage.getItem(key) + "\n";
+			}
+			alert(s);
+		}
+		
+		function clearwb() {
+			localStorage.clear();
+		}
+	</script>
+</head>
+<body>
+	<p><a href = "../index.html">back to homepage</a></p>
+	<h1>Kagurabachi Storage</h1>
+	<h3>Enter key/value pairs to store your Kagurabachies!</h3>
+	<br>
+	<form>
+		<label>Kagurabachi key: <input type="text" id="sKey"></label>
+		<label>Kagurabachi value: <input type="text" id="sValue"></label>
+		<button type="button" onclick="savewb()">Save</button>
+		<button type="button" onclick="accesswb()">Get</button>
+		<button type="button" onclick="clearwb()">Clear</button>
+	</form>
+	
+	<footer>
+		<br>
+		<p style = "color:black; background-color:white; text-align:left; font-size: 16px;">Tenoí</p>
+	</footer>
+</body>
+</html>
