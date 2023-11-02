@@ -1,5 +1,5 @@
 async function loadFeed() {
-	let prom = await fetch( 'https://rss.app/feeds/evJOBWdyAPm8QHPI.xml' );
+	let prom = await fetch( 'https://rss.app/feeds/AnjKpxHqL0GNKGby.xml' );
 	let text = await prom.text();
 	
 	let parser = new DOMParser();
